@@ -1,0 +1,29 @@
+# Archivos generados por el proyecto
+*.npy
+figuras/
+
+# Entornos virtuales de Python
+venv/
+env/
+.env/
+.venv/
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter (por si se usa)
+.ipynb_checkpoints/
+*.ipynb

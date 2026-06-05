@@ -90,23 +90,25 @@ Al finalizar, la carpeta `figuras/` contendrá las 5 gráficas del proyecto:
 
 ## Resultados obtenidos
 
-### Fase I — Correlación de Pearson
-| Dataset | r       | Interpretación          |
-|---------|---------|-------------------------|
-| A       | 0.9299  | Muy fuerte positiva     |
-| B       | 0.8994  | Fuerte positiva         |
+### Fase I — Análisis Exploratorio de Datos
+| Variable    | Dataset A media | Dataset A r | Dataset B media | Dataset B r |
+|-------------|-----------------|-------------|-----------------|-------------|
+| NESMA (X)   | 1,339.67        | —           | 977.22          | —           |
+| Esfuerzo (Y)| 812.24          | —           | 2,834.26        | —           |
+
+Correlación de Pearson: Dataset A **r = 0.9299** (muy fuerte positiva) · Dataset B **r = 0.8994** (fuerte positiva)
 
 ### Fase II — Modelos de Regresión Lineal
-| Dataset | Ecuación                        | R²     |
-|---------|---------------------------------|--------|
-| A       | Ŷ = 13.9527 + 0.5959 · X       | 0.8648 |
-| B       | Ŷ = 415.1543 + 2.4755 · X      | 0.8090 |
+| Dataset | Ecuación                   | R²     |
+|---------|----------------------------|--------|
+| A       | Ŷ = 13.9527 + 0.5959 · X  | 0.8648 |
+| B       | Ŷ = 415.1543 + 2.4755 · X | 0.8090 |
 
-### Fase III — Normalidad de residuales (α = 0.05)
-| Dataset | Shapiro-Wilk p | D'Agostino p | Conclusión       |
-|---------|----------------|--------------|------------------|
-| A       | 0.3827         | 0.4891       | Normalidad ✓     |
-| B       | 0.000011       | 0.0037       | No normalidad ✗  |
+### Fase III — Pruebas de normalidad (α = 0.05)
+| Dataset | Shapiro-Wilk p | D'Agostino p | Conclusión      |
+|---------|----------------|--------------|-----------------|
+| A       | 0.3827         | 0.4891       | Normalidad ✓    |
+| B       | 0.000011       | 0.0037       | No normalidad ✗ |
 
 Prueba comparativa aplicada: **Mann-Whitney U** (p = 0.1857) → sin diferencias significativas entre modelos.
 
@@ -116,3 +118,18 @@ Prueba comparativa aplicada: **Mann-Whitney U** (p = 0.1857) → sin diferencias
 | R²      | 0.8648    | 0.8090    |
 | RMSE    | 194.59    | 902.68    |
 | MAE     | 154.10    | 695.73    |
+
+### Fase IV — Sobreestimación / Subestimación
+| Dataset | Sobreestimación (Ŷ > Y) | Subestimación (Ŷ < Y) |
+|---------|-------------------------|------------------------|
+| A       | 48.9%                   | 51.1%                  |
+| B       | 56.4%                   | 43.6%                  |
+
+Dataset A sin sesgo sistemático. Dataset B tiende a sobreestimar en proyectos pequeños y subestimar en proyectos grandes (heterocedasticidad leve).
+
+### Fase V — Conclusiones
+- Relación lineal fuerte confirmada en ambos datasets (r > 0.89)
+- Ambos modelos explican más del 80% de la variabilidad del esfuerzo
+- Dataset A cumple normalidad; Dataset B no (outliers de alto esfuerzo)
+- Rendimiento estadísticamente equivalente entre modelos (Mann-Whitney U p = 0.1857)
+- La regresión lineal simple es el enfoque adecuado para ambos datasets

@@ -116,11 +116,3 @@ Prueba comparativa aplicada: **Mann-Whitney U** (p = 0.1857) → sin diferencias
 | R²      | 0.8648    | 0.8090    |
 | RMSE    | 194.59    | 902.68    |
 | MAE     | 154.10    | 695.73    |
-
----
-
-## Notas
-
-- Los archivos `.npy` generados durante la ejecución son temporales y están excluidos del repositorio mediante `.gitignore`.
-- Las figuras también se excluyen del repositorio por ser archivos generados; se reproducen ejecutando los scripts.
-- El reporte final en PDF se encuentra en la carpeta `reporte/`.

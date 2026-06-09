@@ -1,6 +1,6 @@
 # Proyecto Final — Estimación de Esfuerzo de Software
 
-**Asignatura:** Estadística para la Calidad de Software  
+**Experiencia Educativa:** Estadística para la Calidad de Software  
 **Institución:** Universidad Veracruzana — Facultad de Estadística e Informática  
 **Técnicas aplicadas:** Modelado Predictivo y Evaluación Estadística  
 
